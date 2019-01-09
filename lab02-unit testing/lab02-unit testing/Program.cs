@@ -105,7 +105,10 @@ namespace lab02_unit_testing
                     Console.WriteLine(e.Message);
 
                 }
-
+                finally
+                {
+                    Console.WriteLine();
+                }
             }
         }
 
