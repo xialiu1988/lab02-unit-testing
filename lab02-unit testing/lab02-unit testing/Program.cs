@@ -30,11 +30,11 @@ namespace lab02_unit_testing
                 {
 
                     string input = Console.ReadLine();
-                    int caseNumber = Int32.Parse(input);
+                    //int caseNumber = Int32.Parse(input);
 
-                    switch (caseNumber)
+                    switch (input)
                     {
-                        case 1:
+                        case "1":
                             Console.WriteLine("How much money you want to deposit?");
                             Console.Write("$");
                             String input4 = Console.ReadLine();
@@ -49,14 +49,14 @@ namespace lab02_unit_testing
                                 run = true;
                                 break;
                             }
-                            else goto case 4;
+                            else goto case "4";
 
 
-                        case 2:
+                        case "2":
                             Console.WriteLine("How much money you want to withdraw?");
                             String input6 = Console.ReadLine();
                             Decimal money2 = Decimal.Parse(input6);
-                            Decimal newBalance2 = DoWithdrawl(myBalance, money2);
+                            Decimal newBalance2 = DoWithdraw(myBalance, money2);
                             myBalance = newBalance2;
                             Console.WriteLine("1.continue 2.Exit");
                             string input3 = Console.ReadLine();
@@ -66,11 +66,11 @@ namespace lab02_unit_testing
                                 run = true;
                                 break;
                             }
-                            else goto case 4;
+                            else goto case "4";
 
 
 
-                        case 3:
+                        case "3":
                             Console.WriteLine($"Your current balance is ${myBalance}");
                             Console.WriteLine("1.continue 2.Exit");
                             string input5 = Console.ReadLine();
@@ -80,18 +80,20 @@ namespace lab02_unit_testing
                                 run = true;
                                 break;
                             }
-                            else goto case 4;
+                            else goto case "4";
 
+                       
 
-
-                        case 4:
+                        case "4":
+                            Console.WriteLine();
                             Console.WriteLine("Thank you ! See you next time!");
+
                             Environment.Exit(0);
                             break;
 
+
                         default:
                             throw new Exception("please choose one from here");
-                            
 
                     }
                 }
@@ -126,7 +128,7 @@ namespace lab02_unit_testing
         }
 
 
-        public static Decimal DoWithdrawl(Decimal myBalance,Decimal money)
+        public static Decimal DoWithdraw(Decimal myBalance,Decimal money)
         {
             
             if (money < 0 || money > myBalance)
@@ -139,10 +141,6 @@ namespace lab02_unit_testing
             }
             return myBalance;
         }
-
-
-
-
 
     }
 }

@@ -23,5 +23,45 @@ namespace unittestingTDD
             Assert.Equal(5000, Program.DoDeposit(balance, input));
 
         }
+
+        [Fact]
+        public void candodeposite()
+        {
+            Decimal balance = 5000;
+           Decimal input = 3.5m;
+            Assert.Equal(5003.5m, Program.DoDeposit(balance, input));
+
+        }
+
+
+        [Fact]
+        public void cannotdonegtivewithdraw()
+        {
+            Decimal balance = 5000;
+            Decimal input = -3.5m;
+            Assert.Equal(5000, Program.DoWithdraw(balance, input));
+
+        }
+
+        [Fact]
+        public void cannotdowithdrawwithamountlargerthanyourbalance()
+        {
+            Decimal balance = 5000;
+            Decimal input = 5000000;
+            Assert.Equal(5000, Program.DoWithdraw(balance, input));
+
+        }
+
+        [Fact]
+        public void candowithdraw()
+        {
+            Decimal balance = 5000;
+            Decimal input = 399.5m;
+            Assert.Equal(4600.5m, Program.DoWithdraw(balance, input));
+
+        }
+
+
+
     }
 }
