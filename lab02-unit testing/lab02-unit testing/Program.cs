@@ -37,8 +37,8 @@ namespace lab02_unit_testing
                         case "1":
                             Console.WriteLine("How much money you want to deposit?");
                             Console.Write("$");
-                            String input4 = Console.ReadLine();
-                            Decimal money = Decimal.Parse(input4);
+                            String input1 = Console.ReadLine();
+                            Decimal money = Decimal.Parse(input1);
                             Decimal newBalance = DoDeposit(myBalance, money);
                             myBalance = newBalance;
                             Console.WriteLine("1.continue 2.Exit");
@@ -54,13 +54,13 @@ namespace lab02_unit_testing
 
                         case "2":
                             Console.WriteLine("How much money you want to withdraw?");
-                            String input6 = Console.ReadLine();
-                            Decimal money2 = Decimal.Parse(input6);
+                            String input3 = Console.ReadLine();
+                            Decimal money2 = Decimal.Parse(input3);
                             Decimal newBalance2 = DoWithdraw(myBalance, money2);
                             myBalance = newBalance2;
                             Console.WriteLine("1.continue 2.Exit");
-                            string input3 = Console.ReadLine();
-                            int ans2 = Int32.Parse(input3);
+                            string input4 = Console.ReadLine();
+                            int ans2 = Int32.Parse(input4);
                             if (ans2 == 1)
                             {
                                 run = true;
