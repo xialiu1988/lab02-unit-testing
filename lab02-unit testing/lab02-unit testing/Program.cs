@@ -54,6 +54,7 @@ namespace lab02_unit_testing
 
                         case "2":
                             Console.WriteLine("How much money you want to withdraw?");
+                            Console.Write("$");
                             String input3 = Console.ReadLine();
                             Decimal money2 = Decimal.Parse(input3);
                             Decimal newBalance2 = DoWithdraw(myBalance, money2);
