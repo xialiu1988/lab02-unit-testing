@@ -14,11 +14,12 @@ namespace lab02_unit_testing
             Console.WriteLine("************************************************");
             Console.WriteLine("************************************************");
 
-          
+          //declare a boolean to run the program
             bool run = true;
+            //declare balance for original amount exsits in my account
             Decimal myBalance = 5000;
 
-
+            //starts
             while (run)
             {
                 Console.WriteLine("Press a number:");
@@ -39,11 +40,15 @@ namespace lab02_unit_testing
                             Console.Write("$");
                             String input1 = Console.ReadLine();
                             Decimal money = Decimal.Parse(input1);
+                            //call DoDeposit method here and return a new balance from that method 
                             Decimal newBalance = DoDeposit(myBalance, money);
+                            //update the original balance
                             myBalance = newBalance;
+                            //let users choose to continue or exit
                             Console.WriteLine("1.continue 2.Exit");
                             string input2 = Console.ReadLine();
                             int ans = Int32.Parse(input2);
+                            //if continue run is true do the while loop
                             if (ans == 1)
                             {
                                 run = true;
@@ -57,7 +62,9 @@ namespace lab02_unit_testing
                             Console.Write("$");
                             String input3 = Console.ReadLine();
                             Decimal money2 = Decimal.Parse(input3);
+                            //call the DoWithdraw method here and return a new balance
                             Decimal newBalance2 = DoWithdraw(myBalance, money2);
+                            //update the bank balance
                             myBalance = newBalance2;
                             Console.WriteLine("1.continue 2.Exit");
                             string input4 = Console.ReadLine();
@@ -92,14 +99,14 @@ namespace lab02_unit_testing
                             Environment.Exit(0);
                             break;
 
-
+                            //if users  not choose 1,2,3,4 it will run this
                         default:
                             throw new Exception("please choose one from here");
 
                     }
                 }
 
-
+                //catch errors happen in the try block,display a message
                 catch (Exception e)
                 {
                     Console.WriteLine(e.Message);
@@ -117,13 +124,13 @@ namespace lab02_unit_testing
 
         public static Decimal DoDeposit(Decimal myBalance,Decimal money)
         {
-           
+           //you can deposit negative amount of money
             if (money == 0 || money < 0)
             {
                 Console.WriteLine("invalide number!");
             }
             else
-            {
+            {   
                 myBalance = myBalance + money;
                
             }
@@ -134,7 +141,7 @@ namespace lab02_unit_testing
 
         public static Decimal DoWithdraw(Decimal myBalance,Decimal money)
         {
-            
+            //you cannot take away more than the amount of your account
             if (money < 0 || money > myBalance)
             {
                 Console.WriteLine("Invalid Number! Can't continue this transaction.");
