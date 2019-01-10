@@ -124,7 +124,7 @@ namespace lab02_unit_testing
 
         public static Decimal DoDeposit(Decimal myBalance,Decimal money)
         {
-           //you can deposit negative amount of money
+           //you cannot deposit negative amount of money
             if (money == 0 || money < 0)
             {
                 Console.WriteLine("invalide number!");
